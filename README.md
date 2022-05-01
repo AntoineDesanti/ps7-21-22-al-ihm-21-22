@@ -1,6 +1,7 @@
 ### ps7-21-22-al-ihm-21-22
+## Projet Architecture Logicielle et Interfaces Homme Machine 
 
-# TEAM M2NA
+# Projet PolyFrontier - TEAM M2NA
 
 - DESANTI Antoine
 - CARASCO Mathis
