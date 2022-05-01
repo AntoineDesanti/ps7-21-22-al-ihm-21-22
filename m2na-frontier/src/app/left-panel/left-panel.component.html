@@ -1,0 +1,44 @@
+<div id="container">
+  <div class="buttonToggleContainer">
+    <button type="button" mat-button (click)="onClickOpenRightPanel()">
+      <fa-icon [icon]="faAngleRight" *ngIf="isRightPanelOpen(); else rightIsClosed"></fa-icon>
+      <ng-template #rightIsClosed>
+        <fa-icon [icon]="faAngleLeft"></fa-icon>
+      </ng-template>
+    </button>
+  </div>
+  <div class="mapWidgetContainer">
+    <app-map-widget
+      [checkpointsToUpdate]="checkpointsToUpdate"
+      [checkpoints]="checkpoints"
+      [valueToDisplay]="selectedModelAttribute" ></app-map-widget>
+   </div>
+      <div class="widgets-area">
+        <app-widget-flow [widgetName]="'Current flow'" [widgetUnit]="'passengers/minute'"
+                         [minValue]="0" [maxValue]="100"
+                         [value]="getSelectedCheckpoint()?.maximumFlowPerMinute  || 0" [bestValue]="0"
+                         (selectedModelAttribute)="changeSelectedModelAttribute($event)"
+                         attributeName="maximumFlowPerMinute"
+        ></app-widget-flow>
+        <app-widget-flow [widgetName]="'Awaiting'" [widgetUnit]="'passengers at checkpoint'"
+                         [minValue]="0" [maxValue]="100"
+                         [value]="getSelectedCheckpoint()?.awaitingPassengers || 0"
+                         [bestValue]="0"
+                         (selectedModelAttribute)="changeSelectedModelAttribute($event)"
+                         attributeName="awaitingPassengers"
+
+        ></app-widget-flow>
+        <app-widget-flow [widgetName]="'Agents'" [widgetUnit]="'Agents on checkpoint'"
+                         [minValue]="0" [maxValue]="10"
+                         [value]="getSelectedCheckpoint()?.maximumControllers || 0"
+                         (selectedModelAttribute)="changeSelectedModelAttribute($event)"
+                         [bestValue]="2"
+                         attributeName="maximumControllers"
+        ></app-widget-flow>
+
+        <app-widget-flow [widgetName]="'Current flow'" [widgetUnit]="'passengers/minute'" [minValue]="0" [maxValue]="100"
+                         [value]="20" [bestValue]="0"></app-widget-flow>
+      </div>
+
+
+</div>

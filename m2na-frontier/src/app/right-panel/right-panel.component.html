@@ -1,0 +1,21 @@
+<div id="container" class="mat-elevation-z6">
+
+    <mat-card  (click)="refreshDropdown()">
+      <mat-list-item>Checkpoint</mat-list-item>
+      <mat-form-field appearance="fill">
+      <mat-label>Checkpoint</mat-label>
+      <mat-select [(value)]="selectedCheckpoint" (selectionChange)="setSelectedCheckpoint($event)" [compareWith]="attributeDisplay">
+        <mat-option *ngFor="let checkpoint of getDropdownCheckpoints()" [value]="checkpoint">
+          {{checkpoint?.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    </mat-card>
+    <mat-divider></mat-divider>
+    <mat-card>
+    <mat-list-item> State of {{getSelectedCheckpoint()?.name}}</mat-list-item>
+    <mat-slide-toggle (change)="toggleCheckpointSetAccess($event)" [checked]="getSelectedCheckpoint()?.isOpen">Open / Close</mat-slide-toggle>
+    </mat-card>
+    <mat-divider></mat-divider>
+    <mat-list-item>Assigned agents</mat-list-item>
+</div>

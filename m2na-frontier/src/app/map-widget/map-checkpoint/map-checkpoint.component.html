@@ -1,0 +1,17 @@
+<div class="circle"
+     [style.top.%]="checkpoint.long"
+     [style.left.%]="checkpoint.lat"
+     [ngClass]="{border:isSelected()}"
+     (click)="selectCheckpoint()"
+>
+  <a *ngIf="checkpoint.isOpen; else closed"><b>{{ getValueToDisplay(checkpoint) }}</b>
+    <div *ngIf="false" class="agents-counter">
+      <mat-icon [matBadge]="checkpoint.maximumControllers" matBadgeSize="small" matBadgeColor="primary">group</mat-icon>
+    </div>
+  </a>
+  <ng-template #closed>
+    <fa-icon [icon]="faTimes" class="closed">close</fa-icon>
+  </ng-template>
+  <div class="checkpoint-name"><b>{{ checkpoint.name }}</b></div>
+
+</div>

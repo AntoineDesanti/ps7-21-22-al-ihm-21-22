@@ -1,0 +1,85 @@
+.circle{
+  width: 30px;
+  height: 30px;
+  transform: translate(-15px,-15px);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #f97e15;
+  opacity: 80%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  padding: 1.5%;
+  font-size: 1.15rem;
+  color: white;
+
+}
+
+.circle:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+.border {
+  box-shadow:
+    0 0 0 10px rgba(110, 0, 0, 0.5),
+    0 0 0 20px rgba(110, 0, 0, 0.25),
+    0 0 0 30px rgba(110, 0, 0, 0.13),
+    0 0 0 40px rgba(110, 0, 0, 0.06),
+    0 0 0 50px rgba(110, 0, 0, 0),
+    0 0 40px 50px rgba(110, 0, 0, 0.06);
+  animation:
+    sunrise 2s infinite linear forwards,
+    rays 2s 2s infinite linear;
+}
+
+@keyframes sunrise {
+  0% {
+    box-shadow: none;
+  }
+}
+
+@keyframes rays {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(110, 0, 0, 0.5),
+      0 0 0 10px rgba(110, 0, 0, 0.5),
+      0 0 0 20px rgba(110, 0, 0, 0.25),
+      0 0 0 30px rgba(110, 0, 0, 0.13),
+      0 0 0 40px rgba(110, 0, 0, 0.06),
+      0 0 20px 50px rgba(110, 0, 0, 0.06);
+  }
+  100% {
+    box-shadow:
+      0 0 0 10px rgba(110, 0, 0, 0.5),
+      0 0 0 20px rgba(110, 0, 0, 0.25),
+      0 0 0 30px rgba(110, 0, 0, 0.13),
+      0 0 0 40px rgba(110, 0, 0, 0.06),
+      0 0 0 50px rgba(110, 0, 0, 0),
+      0 0 20px 50px rgba(110, 0, 0, 0.06);
+  }
+}
+
+.closed{
+  width:100%;
+  font-size:3vw;
+  transform: translate(-0.06vw, 0vw);
+  text-align: center;
+}
+
+.agents-counter{
+  position: absolute;
+  right: -10px;
+  top: 0px;
+}
+
+.checkpoint-name{
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  font-size: 1.25rem;
+  color: white;
+}
+

@@ -1,0 +1,8 @@
+<div class="widget" (click)="onSelectWidget()" [ngStyle]="{'border-color' : progressColor}">
+  <div class="header">{{widgetName}}</div>
+  <div class="value">{{value}}</div>
+  <div class="unit">{{widgetUnit}}</div>
+  <div class="progress-bar-background">
+    <div class="progress-bar-advancement" [ngStyle]="{'width.%': 100*value/(maxValue-minValue), 'background-color': progressColor}">
+    </div></div>
+</div>

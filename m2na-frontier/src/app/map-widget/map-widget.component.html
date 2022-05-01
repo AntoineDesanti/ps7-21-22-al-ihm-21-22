@@ -1,0 +1,13 @@
+<div class="map-widget-container">
+
+  <app-map-checkpoint *ngFor="let checkpoint of checkpointsToUpdate"
+    [checkpoint]="checkpoint"
+    [valueToDisplay]="valueToDisplay">
+
+  </app-map-checkpoint>
+
+  <img id="background-map" src="assets/img/PlanDouane.PNG">
+</div>
+
+
+
